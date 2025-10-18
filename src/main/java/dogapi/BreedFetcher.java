@@ -14,8 +14,13 @@ public interface BreedFetcher {
      * @throws BreedNotFoundException if the breed does not exist
      */
 
-    List<String> getSubBreeds(String breed);
-    // TODO Task 4: make this a checked exception and update any other code as needed.
+    List<String> getSubBreeds(String breed) throws BreedNotFoundException;
+    // DONE Task 4, changed extends RunTimeException to extends Exception
+    // Then I declared that the method getSubBreeds in the interface BreedFetcher will throw BreedNotFoundException (bc it's checked)
+    // I declared in the DogApiBreedFetcher that the method getSubBreeds will throw BreedNotFoundException
+    // In BreedFetcherForLocalTesting, I also declared the method getSubBreeds will throw BreedNotFoundException
+    // END.
+
     // a class defined in an interface is public AND static
     class BreedNotFoundException extends Exception {
         public BreedNotFoundException(String breed) {
