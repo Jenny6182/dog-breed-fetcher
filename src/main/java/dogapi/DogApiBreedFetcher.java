@@ -39,7 +39,7 @@ public class DogApiBreedFetcher implements BreedFetcher {
             if (!response.isSuccessful()) {
                 throw new BreedNotFoundException(breed); }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new BreedNotFoundException(breed);
         }
 
         // Create an ArrayList to organize all the sub-breeds in
