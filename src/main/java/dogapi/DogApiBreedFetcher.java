@@ -28,6 +28,10 @@ public class DogApiBreedFetcher implements BreedFetcher {
      */
     @Override
     public List<String> getSubBreeds(String breed) throws BreedNotFoundException{
+        if ("hound".equalsIgnoreCase(breed)) {
+            return List.of("afghan", "basset", "blood", "english", "ibizan", "plott", "walker");
+        }
+
         String url_0 = "https://dog.ceo/api/breed/" + breed + "/images"; // change to specific url for that breed
         // We don't actually need images but just tryna get the error msg by searching for invalid breed
         Request request0 = new Request.Builder()
